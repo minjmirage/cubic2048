@@ -1,0 +1,16 @@
+compile SWF
+~/Desktop/AIR13.0/bin/mxmlc -compiler.optimize cubic2048.as -include-libraries assets.swc lib/GameCenter.swc lib/NativeAds-6.4.1.swc lib/AS.swc
+..\..\AIR13.0\bin\mxmlc -compiler.optimize cubic2048.as -include-libraries assets.swc lib/GameCenter.swc lib/NativeAds-6.4.1.swc lib/AS.swc
+
+Build App
+~/Desktop/AIR13.0/bin/adt -package -target ipa-app-store -provisioning-profile ~/Desktop/MinjCertificates/MingMirageDev.mobileprovision -storetype pkcs12 -keystore ~/Desktop/MinjCertificates/MingMirageDev.p12 -storepass "andromeda" cubic2048.ipa cubic2048-app.xml cubic2048.swf icons/icon114.png icons/icon29.png icons/icon48.png icons/icon57.png icons/icon72.png icons/icon120.png Default.png Default@2x.png Default-568h@2x.png -extdir lib
+..\..\AIR13.0\bin\adt -package -target ipa-app-store -provisioning-profile ..\Certs\MingMirageDev.mobileprovision -storetype pkcs12 -keystore ..\Certs\MingMirageDev.p12 -storepass "andromeda" cubic2048.ipa cubic2048-app.xml cubic2048.swf icons/icon114.png icons/icon29.png icons/icon48.png icons/icon57.png icons/icon72.png icons/icon120.png Default.png Default@2x.png Default-568h@2x.png -extdir lib
+
+../../AIRSDK_25/bin/adt -package -target apk-captive-runtime -storetype pkcs12 -keystore newcert.p12 -storepass "password" cubic2048.apk cubic2048-app.xml cubic2048.swf icons/icon114.png icons/icon29.png icons/icon48.png icons/icon57.png icons/icon72.png icons/icon120.png Default.png Default@2x.png Default-568h@2x.png -extdir lib
+
+Build for Dist
+~/Desktop/AIR13.0/bin/adt -package -target ipa-app-store -provisioning-profile ~/Desktop/MinjCertificates/MingMirageCubic2048.mobileprovision -storetype pkcs12 -keystore ~/Desktop/MinjCertificates/MingMirageDis.p12 -storepass "andromeda" cubic2048.ipa cubic2048-app.xml cubic2048.swf icons/icon114.png icons/icon29.png icons/icon48.png icons/icon57.png icons/icon72.png icons/icon120.png Default.png Default@2x.png Default-568h@2x.png -extdir lib
+
+Install onto device
+~/Desktop/AIR13.0/bin/adt -installApp -platform ios -package cubic2048.ipa
+..\..\AIR13.0\bin\adt -installApp -platform ios -package cubic2048.ipa
